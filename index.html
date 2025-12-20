@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dohui Lee | KAIST</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="profile.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,46 +14,64 @@
 
 <body>
   <div class="wrapper">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <img src="profile.jpg" alt="Dohui Lee" class="profile-img" />
-      <h1>Dohui Lee</h1>
-      <div class="role">Master's Student @ KAIST</div>
-
-      <div class="contact-links">
-        <a href="mailto:dohui.lee@kaist.ac.kr">dohui.lee@kaist.ac.kr</a>
-        <a href="https://github.com/dohui-kaist" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/dohui-lee-607943219/" target="_blank">LinkedIn</a>
-        <a href="#" target="_blank">Google Scholar</a>
-      </div>
-    </aside>
-
     <!-- Main Content -->
     <main>
       <!-- Navigation -->
       <nav class="top-nav">
-        <a href="index.html" class="active">About</a>
-        <a href="news.html">News</a>
-        <a href="publications.html">Publications</a>
-        <a href="cv.html">CV</a>
+        <div class="nav-links">
+          <a href="index.html" class="active">About</a>
+          <a href="news.html">News</a>
+          <a href="publications.html">Publications</a>
+          <a href="cv.pdf" target="_blank">CV</a>
+        </div>
+        <div id="nav-contacts" class="nav-contacts"></div>
       </nav>
+
+      <!-- Top Section: Profile (Left) + Intro (Right) -->
+      <div class="about-top-section">
+        <div id="profile-container" class="profile-section"></div>
+
+        <div class="intro-text-wrapper">
+          <p class="intro-text" style="margin-top: 0;">
+            👋🏻 Hello! I’m Dohui Lee, a Master’s student in <a href="https://hcitech.org/member.html"
+              target="_blank">HCI
+              Tech Lab</a> at KAIST,
+            advised by Prof. <a href="https://sanghoy.com/" target="_blank">Sang Ho Yoon</a>.
+            I’m interested in haptics and human-computer interaction (HCI) in AR/VR. I’m passionate about providing
+            users
+            with more immersive interactions in virtual environments and developing tools that make these technologies
+            more accessible.
+          </p>
+
+          <h3 class="research-interests-header">Research Interests</h3>
+          <p>XR, Human-Computer Interaction, Authoring Tool, Generative AI</p>
+        </div>
+      </div>
 
       <!-- About Section -->
       <section class="content">
-        <p class="intro-text">
-          👋🏻 Hello! I’m Dohui Lee, a Master’s student in <a href="https://hcitech.org/member.html" target="_blank">HCI
-            Tech Lab</a> at KAIST,
-          advised by Prof. <a href="https://sanghoy.com/" target="_blank">Sang Ho Yoon</a>.
-          I’m interested in haptics and human-computer interaction (HCI) in AR/VR. I’m passionate about providing users
-          with more immersive interactions in virtual environments and developing tools that make these technologies
-          more accessible.
-          </ul>
 
-        <h2>Research Interests</h2>
-        <p>XR, Human-Computer Interaction, Authoring Tool, Generative AI</p>
+        <h2>Latest News</h2>
+        <div id="latest-news-container"></div>
+
+        <h2>Selected Publications</h2>
+        <div id="selected-pubs-container"></div>
       </section>
     </main>
   </div>
+
+  <script src="scripts/data.js?v=2"></script>
+  <script src="scripts/loader.js?v=2"></script>
+  <script>
+    // Compute 'Latest' as just everything since the list is small, or limit it.
+    // 'false' here means we can limit behavior if implemented in loader.
+    // The previous code showed all 2 items on index.
+    renderNews('latest-news-container', true);
+
+    renderPublications('selected-pubs-container', { isSelectedOnly: true, showYearHeaders: false });
+    renderSidebar('profile-container');
+    renderNavIcons('nav-contacts');
+  </script>
 </body>
 
 </html>

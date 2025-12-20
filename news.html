@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News | Dohui Lee</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preload" as="image" href="profile.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,48 +14,31 @@
 
 <body>
     <div class="wrapper">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <img src="profile.jpg" alt="Dohui Lee" class="profile-img" />
-            <h1>Dohui Lee</h1>
-            <div class="role">Master's Student @ KAIST</div>
-
-            <div class="contact-links">
-                <a href="mailto:dohui.lee@kaist.ac.kr">dohui.lee@kaist.ac.kr</a>
-                <a href="https://github.com/dohui-kaist" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/in/dohui-lee-607943219/" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">Google Scholar</a>
-            </div>
-        </aside>
-
         <!-- Main Content -->
         <main>
             <nav class="top-nav">
-                <a href="index.html">About</a>
-                <a href="news.html" class="active">News</a>
-                <a href="publications.html">Publications</a>
-                <a href="cv.html">CV</a>
+                <div class="nav-links">
+                    <a href="index.html">About</a>
+                    <a href="news.html" class="active">News</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="cv.pdf" target="_blank">CV</a>
+                </div>
+                <div id="nav-contacts" class="nav-contacts"></div>
             </nav>
 
             <section class="content">
                 <h2>News</h2>
-
-                <div class="news-item">
-                    <div class="news-date">Sep 2024</div>
-                    <div class="news-content">
-                        Started Master's degree at KAIST.
-                    </div>
-                </div>
-
-                <div class="news-item">
-                    <div class="news-date">Jan 2024</div>
-                    <div class="news-content">
-                        Paper "ARGo" accepted to Virtual Reality (Springer).
-                    </div>
-                </div>
+                <div id="news-container"></div>
             </section>
         </main>
     </div>
+
+    <script src="scripts/data.js?v=2"></script>
+    <script src="scripts/loader.js?v=2"></script>
+    <script>
+        renderNews('news-container', true);
+        renderNavIcons('nav-contacts');
+    </script>
 </body>
 
 </html>
