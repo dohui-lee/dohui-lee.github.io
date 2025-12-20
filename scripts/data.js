@@ -19,19 +19,19 @@ const newsData = [
 // Create new entries here.
 // Set 'isSelected: true' to show on the main page (index.html).
 const publicationData = [
-    // {
-    //     year: 2024,
-    //     title: "HapticGen: Generative Haptic Feedback for Virtual Reality",
-    //     authors: "<strong>Dohui Lee</strong>, Sohyun Won, Jiwon Kim",
-    //     venue: "In CHI Conference on Human Factors in Computing Systems, 2024",
-    //     badge: { text: "CHI", color: "badge-pink" },
-    //     thumbnail: "paper_placeholder.png",
-    //     links: [
-    //         { text: "PDF", url: "#" },
-    //         { text: "Video", url: "#" }
-    //     ],
-    //     isSelected: true
-    // },
+    {
+        year: 2025,
+        title: "Increasing Sense of Agency in VR by Providing Non-Contact Collision Haptics",
+        authors: "<strong>Dohui Lee</strong>, Kun-Woo Song, Sang Ho Yoon",
+        venue: "In IEEE World Haptics Conference Work-In-Progress, 2025",
+        badge: { text: "WHC", color: "badge-pink" },
+        thumbnail: "paper_placeholder.png",
+        links: [
+            // { text: "PDF", url: "#" },
+            // { text: "Video", url: "#" }
+        ],
+        isSelected: true
+    },
     {
         year: 2024,
         title: "ARGo: augmented reality-based mobile Go stone collision game",
