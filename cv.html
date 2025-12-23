@@ -5,11 +5,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV | Dohui Lee</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=9">
     <link rel="preload" as="image" href="profile.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -21,7 +29,7 @@
                     <a href="index.html">About</a>
                     <a href="news.html">News</a>
                     <a href="publications.html">Publications</a>
-                    <a href="cv.pdf" target="_blank">CV</a>
+                    <a href="files/cv.pdf" target="_blank">CV</a>
                 </div>
                 <div id="nav-contacts" class="nav-contacts"></div>
             </nav>
@@ -89,8 +97,10 @@
         </main>
     </div>
 
-    <script src="scripts/data.js?v=2"></script>
-    <script src="scripts/loader.js?v=2"></script>
+    <script src="scripts/data_news.js?v=6"></script>
+    <script src="scripts/data_publications.js?v=6"></script>
+    <script src="scripts/data_profile.js?v=6"></script>
+    <script src="scripts/app_loader.js?v=6"></script>
     <script>
         renderNavIcons('nav-contacts');
     </script>

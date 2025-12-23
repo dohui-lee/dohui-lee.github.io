@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARGo | Dohui Lee</title>
+    <link rel="stylesheet" href="../styles.css?v=9">
+    <link rel="preload" as="image" href="../profile.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-mode');
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Main Content -->
+        <main>
+            <nav class="top-nav">
+                <div class="nav-links">
+                    <a href="../index.html">About</a>
+                    <a href="../news.html">News</a>
+                    <a href="../publications.html">Publications</a>
+                    <a href="../files/cv.pdf" target="_blank">CV</a>
+                </div>
+                <div id="nav-contacts" class="nav-contacts"></div>
+            </nav>
+
+            <section class="content">
+                <div class="project-header">
+                    <h2>ARGo: augmented reality-based mobile Go stone collision game</h2>
+                    <p class="project-authors"><strong>Dohui Lee</strong>, Kun-Woo Song, Sang Ho Yoon</p>
+                    <p class="project-venue">In IEEE World Haptics Conference Work-In-Progress, 2025</p>
+                    <div class="pub-buttons" style="margin-top: 1rem; margin-bottom: 2rem;">
+                        <a href="#" class="btn-outline" target="_blank">Paper PDF</a>
+                        <a href="https://link.springer.com/article/10.1007/s10055-023-00919-4" class="btn-outline"
+                            target="_blank">DOI</a>
+                    </div>
+                </div>
+
+                <div class="project-body">
+                    <img src="../paper_placeholder.png" alt="ARGo Teaser"
+                        style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+
+                    <h3>Abstract</h3>
+                    <p>
+                        In this study, we present a mobile Go stone collision game based on augmented reality, which we
+                        call ARGo, inspired by the traditional Korean board game, Alkkagi. ARGo aims to resolve two main
+                        issues: (1) the portability and space constraints of the original Alkkagi and (2) the limited
+                        sense of reality due to the touchscreen-based interface of the existing mobile Alkkagi games. To
+                        improve a sense of the reality of the game, ARGo provides a gameplay interface similar to the
+                        original Alkkagi by recognizing the user‘s hand motion based on AR. Additionally, it provides a
+                        customization mechanism for each user to improve the recognition of the hand motion and the
+                        strength of the attack considering each user‘s characteristics. Finally, we make the following
+                        three main contributions. First, we employ the automata theory to design the game and collision
+                        scenarios between stones. Consequently, we can clearly define the complicated states incurred by
+                        AR-based motion recognition and collisions between virtual objects. Second, we propose a
+                        collision equation based on Continuous Collision Detection tailored to ARGo, i.e., Go stones and
+                        their collisions. Through experimental studies, we demonstrate that the collision equation
+                        enables the simulation of the exact collision effects. Third, through user experience studies,
+                        we verify the effectiveness of ARGo by showing the effects of the functions implemented in ARGo
+                        and its superiority over the existing mobile game Alkkagi Mania.
+                    </p>
+
+                    <h3>Video</h3>
+                    <div class="video-container" style="margin-top: 20px;">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/GHd1ZPN8Xvk"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <h3>BibTeX</h3>
+                    <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+@article{lee2024argo,
+  title={ARGo: augmented reality-based mobile Go stone collision game},
+  author={Lee, Dohui and Won, Sohyun and Kim, Jiwon and Kwon, Hyuk-Yoon},
+  journal={Virtual Reality},
+  year={2024},
+  publisher={Springer}
+}
+                    </pre>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Note: We use ../ to access scripts from the parent directory -->
+    <script src="../scripts/data_news.js?v=6"></script>
+    <script src="../scripts/data_publications.js?v=6"></script>
+    <script src="../scripts/data_profile.js?v=6"></script>
+    <script src="../scripts/app_loader.js?v=6"></script>
+    <script>
+        // We might need to adjust profileData links if they are relative, but currently they are absolute or mailto.
+        // However, the icon images in profileData are relative paths like "images/email_icon.png".
+        // We need to fix them for this subpage or ensure the loader handles them.
+        // Let's manually fix the icon paths in the rendered HTML for now by overriding or updating the loader logic? 
+        // Or simpler: just fix the paths in data.js to be absolute or root-relative (starting with /) if possible, 
+        // but this is a static site without a server root guarantee for local dev (unless using the python server).
+        // Best approach for static sites on GitHub Pages is relative paths.
+
+        // Quick fix: modify the rendered icons after loading, or just let the user know.
+        // Actually, let's just try to render and see. The images might break. 
+        // I'll update the loader script to handle root paths later if needed, but for now let's see.
+
+        // Actually, a better way is to pass a prefix to renderNavIcons.
+        // But renderNavIcons is in loader.js. 
+
+        // Let's just run it.
+        renderNavIcons('nav-contacts');
+
+        // Fix image paths for icons since we are in a subdirectory
+        document.querySelectorAll('.nav-icon-link img').forEach(img => {
+            const src = img.getAttribute('src');
+            if (src && !src.startsWith('http') && !src.startsWith('../')) {
+                img.src = '../' + src;
+            }
+        });
+    </script>
+</body>
+
+</html>

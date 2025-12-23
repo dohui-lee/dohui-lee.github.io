@@ -1,52 +1,85 @@
-/* 기본 설정 */
+/* 기본 설정 및 테마 변수 */
+:root {
+  /* Dark Mode (Default) Variables */
+  --bg-color: #1e1e1e;
+  --text-main: #ddd;
+  --text-header: #fff;
+  --text-meta: #888;
+  --text-link: #888;
+  --text-link-hover: #fff;
+  --border-color: #333;
+  --card-bg: transparent;
+  /* 혹시 카드 배경이 필요하면 사용 */
+
+  --btn-border: #555;
+  --btn-text: #ccc;
+  --btn-hover-border: #fff;
+  --btn-hover-text: #fff;
+
+  --nav-icon-filter: brightness(0.8);
+  --nav-icon-hover-filter: brightness(1);
+
+  --badge-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Light Mode Variables */
+html.light-mode {
+  --bg-color: #ffffff;
+  --text-main: #333;
+  --text-header: #111;
+  --text-meta: #666;
+  --text-link: #555;
+  --text-link-hover: #007bff;
+  --border-color: #e0e0e0;
+
+  --btn-border: #ccc;
+  --btn-text: #555;
+  --btn-hover-border: #333;
+  --btn-hover-text: #333;
+
+  --nav-icon-filter: brightness(1);
+  /* 원래 색상 유지 */
+  --nav-icon-hover-filter: brightness(1.1);
+  /* 호버시 약간 밝게 */
+
+  --badge-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 html {
   overflow-y: scroll;
-  /* 항상 스크롤바를 표시하여 페이지 이동 시 레이아웃 흔들림(잔상) 방지 */
-  background-color: #1e1e1e;
-  /* 로딩 시 흰색 배경 깜빡임 방지 */
+  background-color: var(--bg-color);
 }
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background-color: #1e1e1e;
-  color: #ddd;
+  background-color: var(--bg-color);
+  color: var(--text-main);
   margin: 0;
   padding: 0;
   line-height: 1.6;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .wrapper {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  /* Grid Layout Removed for single column */
-  /* display: grid; */
-  /* grid-template-columns: 280px 1fr; */
-  /* gap: 3rem; */
 }
 
-/* Profile Section (Formerly Sidebar) */
-/* Now adapted for About Page Top Section */
+/* Profile Section */
 .profile-section {
   text-align: center;
-  /* Removed bottom margin/border as it will be part of the flex container */
-  /* margin-bottom: 3rem; */
-  /* padding-bottom: 2rem; */
-  /* border-bottom: 1px solid #333; */
   flex-shrink: 0;
-  /* Prevent shrinking */
   width: 250px;
-  /* Fixed width for profile col */
 }
 
-/* New Container for Profile + Intro Text side-by-side */
 .about-top-section {
   display: flex;
   gap: 3rem;
   align-items: flex-start;
   margin-bottom: 3rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 3rem;
 }
 
@@ -60,22 +93,21 @@ body {
 
 img.profile-img {
   width: 180px;
-  /* Restored size for side column */
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
-  border: 3px solid #333;
+  border: 3px solid var(--border-color);
 }
 
 .profile-section h1 {
   margin: 0.5rem 0 0.5rem;
   font-size: 2rem;
-  color: #fff;
+  color: var(--text-header);
 }
 
 .profile-section .role {
-  color: #aaa;
+  color: var(--text-meta);
   margin-bottom: 1.5rem;
   font-size: 1rem;
 }
@@ -92,32 +124,37 @@ img.profile-img {
   align-items: center;
   gap: 8px;
   padding: 0.5rem 1rem;
-  background: #2a2a2a;
+  background: var(--border-color);
+  /* Use border color as bg for pill? Or define a surface color */
   border-radius: 20px;
-  /* Rounded pill shape */
-  color: #ccc;
+  color: var(--text-main);
   text-decoration: none;
   transition: all 0.2s;
   font-size: 0.9rem;
 }
 
-/* Icon image style */
+/* Slight adjustment for light mode pill background could be needed, but border-color is ok for now or make a --surface-color */
+body.light-mode .contact-links a {
+  background: #f0f0f0;
+}
+
+
 .contact-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  filter: brightness(0.8);
-  /* Slightly dim icons to match text */
+  filter: var(--nav-icon-filter);
 }
 
 .contact-links a:hover .contact-icon {
-  filter: brightness(1);
-  /* Brighten on hover */
+  filter: var(--nav-icon-hover-filter);
 }
 
 .contact-links a:hover {
-  background: #333;
-  color: #fff;
+  background: var(--border-color);
+  filter: brightness(1.1);
+  /* simple hover effect */
+  color: var(--text-header);
 }
 
 /* Main Content & Navigation */
@@ -128,10 +165,9 @@ main {
 .top-nav {
   display: flex;
   justify-content: space-between;
-  /* Links on one side, icons on other */
   align-items: center;
   margin-bottom: 3rem;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 1rem;
 }
 
@@ -150,24 +186,17 @@ main {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  filter: brightness(0.7) invert(0.8);
-  /* Invert to make dark icons light if they are black on transparent */
-  /* If icons are colored/white pngs, filter might need adjustment. 
-     Assuming white icons or standard colored ones. 
-     Let's stick to simple brightness for now, or use the previous filter assumption.
-     User uploaded pngs.
-  */
-  filter: brightness(0.8);
+  filter: var(--nav-icon-filter);
   transition: all 0.2s;
 }
 
 .nav-icon-link:hover img {
-  filter: brightness(1);
+  filter: var(--nav-icon-hover-filter);
   transform: scale(1.1);
 }
 
 .top-nav a {
-  color: #888;
+  color: var(--text-link);
   text-decoration: none;
   font-weight: 500;
   font-size: 1.05rem;
@@ -176,15 +205,15 @@ main {
 
 .top-nav a:hover,
 .top-nav a.active {
-  color: #fff;
+  color: var(--text-link-hover);
 }
 
 .year-header {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--text-header);
   font-size: 1.5rem;
 }
 
@@ -192,36 +221,26 @@ main {
 .news-item {
   display: flex;
   align-items: flex-start;
-  /* Align content to the top */
   margin-bottom: 1rem;
-  /* Spacing between news items */
   gap: 24px;
-  /* Space between date and content */
 }
 
 .news-date {
   flex-shrink: 0;
   width: 100px;
-  /* Fixed width for alignment */
-  color: #888;
+  color: var(--text-meta);
   font-weight: 500;
   font-size: 0.95rem;
   text-align: left;
-  /* Align date text to the left */
 }
 
 .news-content {
-  color: #ddd;
+  color: var(--text-main);
   line-height: 1.5;
   font-size: 1rem;
 }
 
-/* =========================================
-   [핵심 수정] Publication 리스트 스타일
-   (미디어 쿼리 밖으로 꺼냈습니다)
-   ========================================= */
-
-/* 카드 전체 컨테이너: 가로 배치(Flex) */
+/* Publication Styling */
 .publication-item {
   display: flex;
   gap: 24px;
@@ -229,20 +248,17 @@ main {
   align-items: flex-start;
 }
 
-/* 왼쪽: 썸네일 영역 - Placeholder Style */
-/* 왼쪽: 썸네일 영역 - Placeholder Style */
 .pub-thumbnail {
   position: relative;
-  width: 80px !important;
-  height: 80px !important;
-  max-width: 80px !important;
+  width: 160px !important;
+  /* 직사각형으로 너비 증가 */
+  height: 90px !important;
+  /* 16:9 비율에 맞게 조정 */
+  max-width: 160px !important;
   flex-shrink: 0;
-  /* overflow: hidden; -- 삭제: 뱃지가 밖으로 나가야 함 */
   background-color: transparent;
   margin-top: 10px;
-  /* 뱃지 공간 확보 */
-  border: 1px solid #444;
-  /* 디버깅용 테두리 */
+  border: 1px solid var(--border-color);
 }
 
 .pub-thumbnail img {
@@ -251,27 +267,25 @@ main {
   object-fit: cover;
   display: block;
   border-radius: 8px;
-  /* 이미지 자체에 둥근 모서리 적용 */
 }
 
-/* 뱃지 스타일 (이미지 위에 둥둥 뜨게 - 분리형) */
 .venue-badge {
   position: absolute;
   bottom: 100%;
-  /* 이미지 바로 위 */
   left: 0;
   margin-bottom: 4px;
-  /* 간격 */
   padding: 2px 8px;
   color: #fff;
+  /* 항상 흰색 텍스트 (배경색 있음) */
   font-size: 0.65rem;
   font-weight: 700;
   border-radius: 4px;
   z-index: 10;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--badge-shadow);
   white-space: nowrap;
 }
 
+/* Badge colors remain same */
 .badge-blue {
   background-color: #007bff;
 }
@@ -284,8 +298,10 @@ main {
   background-color: #6c757d;
 }
 
+.badge-yellow {
+  background-color: #E8C63E;
+}
 
-/* 오른쪽: 정보 영역 */
 .pub-info {
   flex: 1;
   display: flex;
@@ -296,41 +312,40 @@ main {
   display: block;
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-header);
   margin-bottom: 0.5rem;
   line-height: 1.4;
   text-decoration: none;
 }
 
 .pub-title:hover {
-  color: #4ea1ff;
+  color: var(--text-link-hover);
   text-decoration: underline;
 }
 
 .pub-authors {
   display: block;
-  color: #bbb;
+  color: var(--text-main);
   margin-bottom: 0.3rem;
   font-size: 0.95rem;
   line-height: 1.5;
   word-break: keep-all;
-  /* 단어 단위 줄바꿈 */
 }
 
+/* Highlight author name */
 .pub-authors strong {
-  color: #fff;
+  color: var(--text-header);
   font-weight: 600;
 }
 
 .pub-venue {
   display: block;
-  color: #888;
+  color: var(--text-meta);
   font-style: italic;
   margin-bottom: 0.8rem;
   font-size: 0.9rem;
 }
 
-/* 버튼 영역 */
 .pub-buttons {
   display: flex;
   gap: 0.8rem;
@@ -340,9 +355,9 @@ main {
 .btn-outline {
   display: inline-block;
   padding: 4px 12px;
-  border: 1px solid #555;
+  border: 1px solid var(--btn-border);
   border-radius: 4px;
-  color: #ccc;
+  color: var(--btn-text);
   font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none;
@@ -351,39 +366,82 @@ main {
 }
 
 .btn-outline:hover {
-  border-color: #fff;
-  color: #fff;
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-text);
+  background: var(--border-color);
+  /* optional hover bg */
 }
 
-
-/* =========================================
-   [모바일 반응형] 화면이 작을 때만 적용
-   ========================================= */
 @media (max-width: 768px) {
   .wrapper {
     grid-template-columns: 1fr;
-    /* 사이드바 위로 올리고 1단 배열 */
     padding: 1rem;
     gap: 2rem;
   }
 
-  /* 썸네일과 텍스트를 세로로 쌓기 */
   .publication-item {
     flex-direction: column;
     gap: 12px;
   }
 
-  /* 모바일에서도 썸네일 크기 유지 */
   .pub-thumbnail {
-    width: 80px !important;
-    height: 80px !important;
+    /* 모바일에서도 동일하게 유지하거나 조금 줄일 수 있음. 일단 유지 */
+    width: 160px !important;
+    height: 90px !important;
   }
 }
-/* Research Interests Header (Smaller) */
+
 .research-interests-header {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--text-header);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+}
+
+/* Theme Toggle Button Style */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-link);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--text-link-hover);
+  transform: scale(1.1);
+}
+
+/* Publication Award Styling - Boxed */
+.pub-award {
+  display: inline-block;
+  width: fit-content;
+  /* This ensures box wraps only text content */
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  margin-top: 0.2rem;
+  line-height: normal;
+
+  /* Default (Dark Mode) */
+  color: #FFD700;
+  /* Bright Gold */
+  background-color: rgba(255, 215, 0, 0.15);
+  /* Transparent Gold bg */
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+/* Light Mode Override */
+html.light-mode .pub-award {
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
 }

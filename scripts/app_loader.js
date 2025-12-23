@@ -69,6 +69,7 @@ function renderPublications(containerId, options = {}) {
                 <a href="#" class="pub-title">${pub.title}</a>
                 <span class="pub-authors">${pub.authors}</span>
                 <span class="pub-venue">${pub.venue}</span>
+                ${pub.award ? `<div class="pub-award">${pub.award}</div>` : ''}
                 <div class="pub-buttons">
                     ${linksHtml}
                 </div>
@@ -118,5 +119,48 @@ function renderNavIcons(containerId) {
         }
     });
 
+    // Add Theme Toggle Button
+    html += `
+        <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Theme" style="margin-left: 10px;">
+            ☀
+        </button>
+    `;
+
     container.innerHTML = html;
+
+    // Ensure icon state matches current theme
+    updateThemeIcon();
 }
+
+/* =========================================
+   Theme Toggle Logic
+   ========================================= */
+
+function toggleTheme() {
+    const html = document.documentElement;
+    html.classList.toggle('light-mode');
+
+    const isLight = html.classList.contains('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+    updateThemeIcon();
+}
+
+function updateThemeIcon() {
+    const btn = document.getElementById('theme-toggle-btn');
+    if (!btn) return;
+
+    const isLight = document.documentElement.classList.contains('light-mode');
+    // If Light, show Moon (to switch to Dark). If Dark, show Sun (to switch to Light).
+    btn.innerHTML = isLight ? '🌙' : '☀';
+}
+
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+    }
+}
+
+// Initialize Theme on Script Load (Fallback if inline script is missing)
+loadTheme();
