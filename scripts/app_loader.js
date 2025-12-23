@@ -3,13 +3,13 @@
  * @param {string} containerId - The ID of the DOM element to render into.
  * @param {boolean} showAll - If true, shows all news. If false, shows only the latest (first 2).
  */
-function renderNews(containerId, showAll = true) {
+function renderNews(containerId, showAll = false) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     // Decide how many items to show
     // If showAll is false, we verify if there are limits. Let's say default limit is 3 for 'latest'.
-    const itemsToRender = showAll ? newsData : newsData.slice(0, 3);
+    const itemsToRender = showAll ? newsData : newsData.slice(0, 8);
 
     let html = '';
     itemsToRender.forEach(item => {
