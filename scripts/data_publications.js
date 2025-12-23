@@ -2,19 +2,19 @@
 // Create new entries here.
 // Set 'isSelected: true' to show on the main page (index.html).
 const publicationData = [
-    {
-        year: 2026,
-        title: "HOICraft: In-Situ VLM-based Authoring Tool for Part-Level Hand-Object Interaction Design in VR",
-        authors: "<strong>Dohui Lee</strong>, Qi Sun, Sang Ho Yoon",
-        venue: "In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, 2026",
-        badge: { text: "CHI", color: "badge-pink" },
-        thumbnail: "paper_placeholder.png",
-        links: [
-            // { text: "PDF", url: "#" },
-            // { text: "Video", url: "#" }
-        ],
-        isSelected: true
-    },
+    // {
+    //     year: 2026,
+    //     title: "HOICraft: In-Situ VLM-based Authoring Tool for Part-Level Hand-Object Interaction Design in VR",
+    //     authors: "<strong>Dohui Lee</strong>, Qi Sun, Sang Ho Yoon",
+    //     venue: "In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, 2026",
+    //     badge: { text: "CHI", color: "badge-pink" },
+    //     thumbnail: "paper_placeholder.png",
+    //     links: [
+    //         // { text: "PDF", url: "#" },
+    //         // { text: "Video", url: "#" }
+    //     ],
+    //     isSelected: true
+    // },
     {
         year: 2025,
         title: "Increasing Sense of Agency in VR by Providing Non-Contact Collision Haptics",
@@ -47,8 +47,8 @@ const publicationData = [
         title: "Proposal and Evaluation of a Metaverse Museum System Based on User-Generated Content and Collaboration",
         authors: "Coulon Jina Jung, <strong>Dohui Lee</strong>, Philip Liu, Woontack Woo",
         venue: "In HCI Korea, 2025",
-        badge: { text: "HCI Korea", color: "badge-gray" },
-        thumbnail: "paper_placeholder.png",
+        badge: { text: "HCIK", color: "badge-gray" },
+        thumbnail: "images/teaser_images/hcik_2025.png",
         links: [
             // { text: "PDF", url: "#" },
             // { text: "Video", url: "#" }
@@ -73,8 +73,8 @@ const publicationData = [
         title: "Automata-based Collision Scenario Design to Prevent Continuous Collision Detection in Augmented Reality Go Stone Collision Game",
         authors: "<strong>Dohui Lee</strong>, Hyuk-Yoon Kwon",
         venue: "In KIISE Transactions on Computing Practices, 2022",
-        badge: { text: "KIISE", color: "badge-gray" },
-        thumbnail: "paper_placeholder.png",
+        badge: { text: "KTCP", color: "badge-gray" },
+        thumbnail: "images/teaser_images/ktcp_2022.png",
         links: [
             { text: "DOI", url: "https://doi.org/10.5626/KTCP.2022.28.8.413" },
         ],
@@ -86,7 +86,7 @@ const publicationData = [
         authors: "Min-Seon Kim, <strong>Dohui Lee</strong>, Hyuk-Yoon Kwon",
         venue: "In Korea Computer Congress, 2022",
         badge: { text: "KCC", color: "badge-gray" },
-        thumbnail: "paper_placeholder.png",
+        thumbnail: "images/teaser_images/kcc_2022.png",
         links: [
             // { text: "DOI", url: "https://doi.org/10.5626/KTCP.2022.28.8.413" },
         ],

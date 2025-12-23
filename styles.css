@@ -308,6 +308,53 @@ main {
   flex-direction: column;
 }
 
+/* Site Branding (Name at top-left) */
+.site-branding {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  /* Aligned with typical page padding */
+  font-size: 1.5rem;
+  /* Larger */
+  font-weight: 800;
+  /* Bolder */
+  color: var(--text-header);
+  text-decoration: none;
+  z-index: 9999;
+  transition: color 0.2s, opacity 0.2s;
+  line-height: 1;
+  /* Ensure line height doesn't mess up vertical alignment too much */
+}
+
+.site-branding:hover {
+  color: var(--text-link-hover);
+  opacity: 1;
+}
+
+@media (max-width: 1400px) {
+
+  /* When screen is not super wide, move it to inline flow or adjust position */
+  .site-branding {
+    /* Keep it fixed but might overlap if screen is narrow but not mobile yet.
+        Actually user asked for "left of the page" not inline.
+        But if it overlaps content (wrapper is 900px), we need to be careful.
+        (100vw - 900px) / 2 is the margin.
+        If margin < left position + width, it overlaps.
+        Let's keep it fixed for now as requested.
+     */
+  }
+}
+
+@media (max-width: 1200px) {
+  .site-branding {
+    position: static;
+    display: block;
+    margin: 0 0 1rem 0;
+    /* Reset margins */
+    font-size: 1.8rem;
+  }
+}
+
 .pub-title {
   display: block;
   font-size: 1.1rem;

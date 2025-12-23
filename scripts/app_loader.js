@@ -59,11 +59,17 @@ function renderPublications(containerId, options = {}) {
             `<a href="${link.url}" class="btn-outline" target="_blank">${link.text}</a>`
         ).join('\n');
 
+        const thumbnailContent = pub.thumbnail ? `
+            <div class="venue-badge ${pub.badge.color}">${pub.badge.text}</div>
+            <img src="${pub.thumbnail}" alt="${pub.title} thumbnail">
+        ` : '';
+
+        const thumbnailStyle = pub.thumbnail ? '' : 'border: none; background: transparent;';
+
         html += `
         <div class="publication-item">
-            <div class="pub-thumbnail">
-                <div class="venue-badge ${pub.badge.color}">${pub.badge.text}</div>
-                <img src="${pub.thumbnail}" alt="${pub.title} thumbnail">
+            <div class="pub-thumbnail" style="${thumbnailStyle}">
+                ${thumbnailContent}
             </div>
             <div class="pub-info">
                 <a href="#" class="pub-title">${pub.title}</a>
@@ -164,3 +170,24 @@ function loadTheme() {
 
 // Initialize Theme on Script Load (Fallback if inline script is missing)
 loadTheme();
+
+/* =========================================
+   Global Branding (Site Title)
+   ========================================= */
+function renderSiteBranding() {
+    // Check if we are in a subdirectory (simple check based on location or script path)
+    // A robust way for this static site structure:
+    const isProjectPage = window.location.pathname.includes('/projects/');
+    const homeLink = isProjectPage ? '../index.html' : 'index.html';
+
+    const branding = document.createElement('a');
+    branding.href = homeLink;
+    branding.textContent = 'Dohui Lee';
+    branding.className = 'site-branding';
+
+    // Insert as the first child of body
+    document.body.insertBefore(branding, document.body.firstChild);
+}
+
+// Render branding
+renderSiteBranding();

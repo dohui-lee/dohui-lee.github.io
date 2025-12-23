@@ -1,38 +1,32 @@
-/* Publication Award Styling - Boxed */
-.pub-award {
-    display: inline-block;
-    color: #856404;
-    /* Dark yellow/brown text */
-    background-color: #fff3cd;
-    /* Light yellow background */
-    border: 1px solid #ffeeba;
-    /* Yellow border */
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
-    margin-top: 0.2rem;
-    line-height: normal;
+/* Site Branding (Name at top-left) */
+.site-branding {
+    position: fixed;
+    top: 2rem;
+    left: 3rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-header);
+    text-decoration: none;
+    z-index: 9999;
+    transition: color 0.2s, opacity 0.2s;
 }
 
-/* Optional: Dark mode adjustments if needed */
-/* Since we use specific colors, let's verify if default dark mode needs override */
-/* Actually, hardcoded light colors might look jarring in dark mode. Let's make it adaptive or use variables if possible. */
-/* But for now, let's stick to a safe "gold" style that works on dark/light or define specific dark mode version. */
-
-/* Let's try a style that fits both or use transparency */
-.pub-award {
-    color: #ffd700;
-    /* Gold text for dark mode */
-    background-color: rgba(255, 215, 0, 0.1);
-    /* Transparent Gold bg */
-    border: 1px solid rgba(255, 215, 0, 0.3);
+.site-branding:hover {
+    color: var(--text-link-hover);
+    opacity: 0.8;
 }
 
-/* Light Mode Override */
-html.light-mode .pub-award {
-    color: #856404;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
+@media (max-width: 1200px) {
+    .site-branding {
+        position: static;
+        display: block;
+        margin: 2rem 0 -1rem 2rem;
+        /* Give some space, pull bottom a bit */
+    }
+}
+
+@media (max-width: 768px) {
+    .site-branding {
+        margin: 1.5rem 0 -1rem 1.5rem;
+    }
 }
