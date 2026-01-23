@@ -1,5 +1,9 @@
 const newsData = [
     {
+        date: "Jan 2026",
+        content: "👏 <strong>HOICraft</strong> has been conditionally accepted at CHI 2026."
+    },
+    {
         date: "Sep 2025",
         content: "Selected for the National Science & Technology Scholarship (KOSAF)."
     },

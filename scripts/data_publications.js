@@ -2,19 +2,19 @@
 // Create new entries here.
 // Set 'isSelected: true' to show on the main page (index.html).
 const publicationData = [
-    // {
-    //     year: 2026,
-    //     title: "HOICraft: In-Situ VLM-based Authoring Tool for Part-Level Hand-Object Interaction Design in VR",
-    //     authors: "<strong>Dohui Lee</strong>, Qi Sun, Sang Ho Yoon",
-    //     venue: "In Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems, 2026",
-    //     badge: { text: "CHI", color: "badge-pink" },
-    //     thumbnail: "paper_placeholder.png",
-    //     links: [
-    //         // { text: "PDF", url: "#" },
-    //         // { text: "Video", url: "#" }
-    //     ],
-    //     isSelected: true
-    // },
+    {
+        year: 2026,
+        title: "HOICraft: In-Situ VLM-based Authoring Tool for Part-Level Hand-Object Interaction Design in VR",
+        authors: "<strong>Dohui Lee</strong>, Qi Sun, Sang Ho Yoon",
+        venue: "In Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems, 2026",
+        badge: { text: "CHI", color: "badge-pink" },
+        thumbnail: "paper_placeholder.png",
+        links: [
+            // { text: "PDF", url: "#" },
+            // { text: "Video", url: "#" }
+        ],
+        isSelected: true
+    },
     {
         year: 2025,
         title: "Increasing Sense of Agency in VR by Providing Non-Contact Collision Haptics",
