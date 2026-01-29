@@ -40,17 +40,19 @@
 
             <section class="content">
                 <h2>Publications</h2>
+                <div id="filter-controls" class="filter-controls"></div>
                 <div id="publications-container"></div>
             </section>
         </main>
     </div>
 
-    <script src="scripts/data_news.js?v=6"></script>
-    <script src="scripts/data_publications.js?v=6"></script>
-    <script src="scripts/data_profile.js?v=6"></script>
-    <script src="scripts/app_loader.js?v=8"></script>
+    <script src="scripts/data_news.js?v=7"></script>
+    <script src="scripts/data_publications.js?v=7"></script>
+    <script src="scripts/data_profile.js?v=7"></script>
+    <script src="scripts/app_loader.js?v=10"></script>
+    <script src="scripts/publications_filter.js?v=2"></script>
     <script>
-        renderPublications('publications-container', { isSelectedOnly: false, showYearHeaders: true });
+        initPublicationFilters();
         renderNavIcons('nav-contacts');
     </script>
 </body>

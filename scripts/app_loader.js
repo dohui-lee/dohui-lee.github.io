@@ -28,13 +28,13 @@ function renderNews(containerId, showAll = false) {
  * @param {string} containerId - The ID of the DOM element to render into.
  * @param {object} options - Options for rendering: { isSelectedOnly: boolean, showYearHeaders: boolean }
  */
-function renderPublications(containerId, options = {}) {
+function renderPublications(containerId, options = {}, customData = null) {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     const { isSelectedOnly = false, showYearHeaders = false } = options;
 
-    let items = publicationData;
+    let items = customData || publicationData;
 
     // Filter by selected if needed
     if (isSelectedOnly) {

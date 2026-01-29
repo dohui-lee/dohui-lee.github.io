@@ -302,6 +302,35 @@ main {
   background-color: #E8C63E;
 }
 
+/* Publication Legend/Category Guide */
+.pub-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 0.8rem 1rem;
+  background-color: var(--card-bg);
+  /* Or transparent/border */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-meta);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* Circle */
+  display: inline-block;
+}
+
 .pub-info {
   flex: 1;
   display: flex;
@@ -486,9 +515,140 @@ main {
   border: 1px solid rgba(255, 215, 0, 0.4);
 }
 
-/* Light Mode Override */
-html.light-mode .pub-award {
-  color: #856404;
-  background-color: #fff3cd;
-  border: 1px solid #ffeeba;
+/* Publication Filters */
+.filter-controls {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-tabs {
+  display: inline-flex;
+  background-color: var(--border-color);
+  padding: 4px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-meta);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  background-color: var(--bg-color);
+  /* Uses card effect on segment */
+  color: var(--text-header);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-subs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.sub-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  color: var(--text-meta);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sub-btn:hover {
+  border-color: var(--text-link-hover);
+  color: var(--text-link-hover);
+}
+
+.sub-btn.active {
+  background-color: var(--text-header);
+  color: var(--bg-color);
+  /* Inverse */
+  border-color: var(--text-header);
+}
+
+/* Light mode adjustment for sub-btn active text to be readable */
+html.light-mode .sub-btn.active {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Colored Filter Buttons (International) */
+.sub-btn.btn-pink {
+  color: #e83e8c;
+  border-color: #e83e8c;
+}
+
+.sub-btn.btn-pink:hover {
+  background-color: rgba(232, 62, 140, 0.1);
+}
+
+.sub-btn.btn-pink.active {
+  background-color: #e83e8c;
+  color: #fff;
+  border-color: #e83e8c;
+}
+
+.sub-btn.btn-blue {
+  color: #007bff;
+  border-color: #007bff;
+}
+
+.sub-btn.btn-blue:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.sub-btn.btn-blue.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.sub-btn.btn-yellow {
+  color: #E8C63E;
+  border-color: #E8C63E;
+}
+
+.sub-btn.btn-yellow:hover {
+  background-color: rgba(232, 198, 62, 0.1);
+}
+
+/* Yellow needs dark text for contrast usually */
+.sub-btn.btn-yellow.active {
+  background-color: #E8C63E;
+  color: #fff;
+  /* Keeping white for consistency if readable, or #000 */
+  border-color: #E8C63E;
 }

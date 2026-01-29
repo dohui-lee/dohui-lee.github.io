@@ -8,6 +8,7 @@ const publicationData = [
         authors: "<strong>Dohui Lee</strong>, Qi Sun, Sang Ho Yoon",
         venue: "In Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems, 2026",
         badge: { text: "CHI", color: "badge-pink" },
+        category: { scope: "International", type: "Conference" },
         thumbnail: "paper_placeholder.png",
         links: [
             // { text: "PDF", url: "#" },
@@ -21,6 +22,7 @@ const publicationData = [
         authors: "<strong>Dohui Lee</strong>, Kun-Woo Song, Sang Ho Yoon",
         venue: "In IEEE World Haptics Conference Work-In-Progress, 2025",
         badge: { text: "WHC", color: "badge-yellow" },
+        category: { scope: "International", type: "Others" },
         thumbnail: "images/teaser_images/whc_2025.jpg",
         links: [
             // { text: "Website", url: "projects/opov.html" }
@@ -35,6 +37,7 @@ const publicationData = [
         venue: "In Korea Computer Congress, 2025",
         award: "🏆 Best Presentation Paper Award",
         badge: { text: "KCC", color: "badge-gray" },
+        category: { scope: "Domestic", type: "Conference" },
         thumbnail: "images/teaser_images/eatmate.jpg",
         links: [
             // { text: "PDF", url: "#" },
@@ -48,6 +51,7 @@ const publicationData = [
         authors: "Coulon Jina Jung, <strong>Dohui Lee</strong>, Philip Liu, Woontack Woo",
         venue: "In HCI Korea, 2025",
         badge: { text: "HCIK", color: "badge-gray" },
+        category: { scope: "Domestic", type: "Others" },
         thumbnail: "images/teaser_images/hcik_2025.png",
         links: [
             // { text: "PDF", url: "#" },
@@ -61,6 +65,7 @@ const publicationData = [
         authors: "<strong>Dohui Lee</strong>, Sohyun Won, Jiwon Kim, Hyuk-Yoon Kwon",
         venue: "In Springer Virtual Reality, 2024",
         badge: { text: "Virtual Reality", color: "badge-blue" },
+        category: { scope: "International", type: "Journal" },
         thumbnail: "images/teaser_images/argo.jpg",
         links: [
             { text: "DOI", url: "https://link.springer.com/article/10.1007/s10055-023-00919-4" },
@@ -74,6 +79,7 @@ const publicationData = [
         authors: "<strong>Dohui Lee</strong>, Hyuk-Yoon Kwon",
         venue: "In KIISE Transactions on Computing Practices, 2022",
         badge: { text: "KTCP", color: "badge-gray" },
+        category: { scope: "Domestic", type: "Journal" },
         thumbnail: "images/teaser_images/ktcp_2022.png",
         links: [
             { text: "DOI", url: "https://doi.org/10.5626/KTCP.2022.28.8.413" },
@@ -86,6 +92,7 @@ const publicationData = [
         authors: "Min-Seon Kim, <strong>Dohui Lee</strong>, Hyuk-Yoon Kwon",
         venue: "In Korea Computer Congress, 2022",
         badge: { text: "KCC", color: "badge-gray" },
+        category: { scope: "Domestic", type: "Others" },
         thumbnail: "images/teaser_images/kcc_2022.png",
         links: [
             // { text: "DOI", url: "https://doi.org/10.5626/KTCP.2022.28.8.413" },
