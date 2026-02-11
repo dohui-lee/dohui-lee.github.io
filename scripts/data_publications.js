@@ -11,8 +11,8 @@ const publicationData = [
         category: { scope: "International", type: "Conference" },
         thumbnail: "paper_placeholder.png",
         links: [
-            // { text: "PDF", url: "#" },
-            // { text: "Video", url: "#" }
+            { text: "DOI", url: "https://arxiv.org/abs/2602.08219" },
+            { text: "Website", url: "https://hoicraft.hcitech.org/" }
         ],
         isSelected: true
     },
