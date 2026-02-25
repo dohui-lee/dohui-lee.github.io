@@ -9,7 +9,7 @@ const publicationData = [
         venue: "In Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems, 2026",
         badge: { text: "CHI", color: "badge-pink" },
         category: { scope: "International", type: "Conference" },
-        thumbnail: "paper_placeholder.png",
+        thumbnail: "images/teaser_images/hoicraft.png",
         links: [
             { text: "DOI", url: "https://arxiv.org/abs/2602.08219" },
             { text: "Website", url: "https://hoicraft.hcitech.org/" }
