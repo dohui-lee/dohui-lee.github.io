@@ -12,7 +12,8 @@ const publicationData = [
         thumbnail: "images/teaser_images/hoicraft.png",
         links: [
             { text: "DOI", url: "https://arxiv.org/abs/2602.08219" },
-            { text: "Website", url: "https://hoicraft.hcitech.org/" }
+            { text: "Website", url: "https://hoicraft.hcitech.org/" },
+            { text: "Video", url: "https://youtu.be/-QvYgTRsOgI" }
         ],
         isSelected: true
     },
