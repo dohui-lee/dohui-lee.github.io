@@ -1,5 +1,9 @@
 const newsData = [
     {
+        date: "Apr 2026",
+        content: "Presented at CHI 2026."
+    },
+    {
         date: "Jan 2026",
         content: "👏 <strong>HOICraft</strong> has been conditionally accepted at CHI 2026."
     },
